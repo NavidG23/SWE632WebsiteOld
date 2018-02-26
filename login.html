@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Patriot Web Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="javascript/scripts/login.js"></script>
+    <style>
+
+        body {
+            background: white url('images/MasonLogo.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .login-form {
+            position: fixed;
+            border-radius: 25px;
+            background-color: #003300;
+            color: white;
+            padding: 70px;
+            width: 800px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .div-button {
+            position: absolute;
+            right: 35px;
+        }
+
+        .submit-button {
+            background-color: #ffd740;
+            color: black;
+            padding: 10px;
+            margin: 10px;
+            width: 150px;
+            align-items: right;
+            border-radius: 25px;
+        }
+
+        .submit-button:hover {
+            background-color: darkgray;
+            color: whitesmoke;
+        }
+
+        .logo {
+            position: center;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+
+        .header-label {
+            color: #c8a600;
+            font-size: 54px;
+        }
+
+    </style>
+</head>
+<body>
+<!-- Main body -->
+<div class="container-fluid">
+    <div class="row content login-form">
+        <div class="row main">
+            <!-- Logo -->
+            <div class="row logo">
+                <label class="col col-xs-12 header-label">Welcome to Patriot Web!</label>
+            </div>
+
+            <!--Login Form-->
+            <form>
+                <div class="row form-group">
+                    <label class="col col-xs-2" for="inputUsername">Username</label>
+                    <input type="text" class="col col-xs-6 form-control" id="inputUsername" placeholder="Enter your username">
+                </div>
+                <div class="row form-group">
+                    <label class="col col-xs-2" for="inputPassword">Password</label>
+                    <input type="password" class="col col-xs-6 form-control" id="inputPassword" placeholder="Enter your password">
+                </div>
+                <div class="row div-button">
+                    <input type="button" class="col col-xs-2 btn btn-primary submit-button" value="Login"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

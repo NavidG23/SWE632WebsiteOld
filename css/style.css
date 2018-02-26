@@ -1,0 +1,174 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+body{
+		background-color:white;
+	}
+
+	.navbar-brand{
+		padding:0;
+		margin-left:5px;
+		height:100%
+	}
+
+    .secondnavbar{
+        background-color: #006633;
+		margin-bottom: 0px;
+		border-radius: 0;
+		border-color:#006633;
+		height:80px;
+		color:white;
+		font-size: 16px;
+    }
+	.navbar{
+		background-color: #006633;
+		margin-bottom: 0px;
+		border-radius: 0;
+		border-color:#006633;
+		min-height:40px;
+		color:white;
+		font-size: 16px;
+	}
+
+	.nav-item a{
+		color:white;
+	}
+
+	.navbar-brand img
+	{
+		max-height: 100%;
+	}
+
+	.nav-tabs > li, .nav-pills > li {
+		float:none;
+		display:inline-block;
+	}
+
+	.nav-pills{ text-align: center;}
+
+	.nav-tabs {
+		text-align:right;
+	}
+
+	.nav > li > a:focus, .nav > li > a:hover{
+		background-color:#FFCC33;
+		text-decoration: none;
+	}
+
+	.main{
+		background-image: url("../images/masonBackground.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-right: 0px;
+		height:800px;
+	}
+
+	.logo{
+		position:absolute;
+		z-index:1000;
+		margin-left:15px;
+	}
+
+	 /*Overlay container*/
+	 .image-container {
+		position: relative;
+		margin-bottom: 30px;
+		margin-top:10%;
+		text-align:center;
+		font-size:18px;
+		font-weight: 200;
+	}
+
+	/*Overlay opacity*/
+	.image-container .overlay:hover {
+		opacity: .7;
+	}
+
+	/*image container*/
+    .image-container img {
+        border-radius: 50%;
+		width:300px;
+		border: 0px solid rgb(248, 248, 127);
+    }
+
+    /*button specs*/
+    .image-container .btn {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #555;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    /*button color*/
+    .image-container img:hover {
+		border: 3px solid rgb(248, 248, 127);
+		transition: border .05s ease;
+	}
+
+    /*overlay specs*/
+	.overlay {
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #FFCC33;
+    }
+
+	.picture-label{
+		text-align: center;
+	}
+
+	footer{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+		background-color: #006633;
+		text-align: center;
+		color:white
+	}
+
+	.searchDiv{
+		float: right !important;
+		color:black;
+	}
+
+	.searchDiv button{
+		cursor: not-allowed;
+	}
+
+	.greeting{
+		color:#FFCC33;
+		/* font-family:"Brush Script MT Bold", cursive; */
+		font-family: URW Chancery L, cursive;
+		text-align: right;
+		margin-right:5%;
+	}

@@ -1,0 +1,267 @@
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    height: 100%
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+
+    .row.content {
+        height: auto;
+    }
+}
+
+/*Holds all image options in one container*/
+.bigcontainer {
+    object-position: right;
+    margin-top: -220px;
+}
+
+/*Overlay container*/
+.container {
+    position: relative;
+    left: 1100px;
+    max-width: 300px;
+    margin-bottom: 30px;
+}
+
+/*image container*/
+.container img {
+    border-radius: 50%;
+    width: auto;
+    height: auto;
+}
+
+/*        button specs*/
+.container .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/*button color*/
+.container .btn:hover {
+    background-color: black;
+}
+
+/*overlay specs*/
+.overlay {
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: mediumseagreen;
+}
+
+/*Overlay opacity*/
+.container:hover .overlay {
+    opacity: .7;
+}
+
+/*        Patriot web title*/
+h1 {
+    font-size: 75px;
+    color: darkgreen;
+    margin-left: 450px;
+    /*            font-family: URW Chancery L, cursive;*/
+    font-family: "Brush Script MT Bold", cursive;
+}
+
+/*        Text under Patriot web title*/
+h4 {
+    font-size: 20px;
+    font-family: "Brush Script MT Bold", cursive;
+    color: darkgreen;
+    margin-left: 700px;
+}
+
+.main {
+    background: url("../images/masonBackground.png") no-repeat center center fixed;
+    background-size: cover;
+    margin-right: 0px;
+    height: 100%;
+}
+
+.bg1 {
+    height: 1500px;
+    padding-bottom: 70px;
+}
+
+/*Overlay container*/
+.image-container {
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+/*Overlay opacity*/
+.image-container .overlay:hover {
+    opacity: .7;
+}
+
+/*image container*/
+.image-container img {
+    border-radius: 50%;
+    width: 200px;
+    border: 0px solid rgb(248, 248, 127);
+}
+
+/*button specs*/
+.image-container .btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/*button color*/
+.image-container img:hover {
+    border: 3px solid rgb(248, 248, 127);
+    transition: border .05s ease;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.panel {
+    border: 1px solid black;
+    padding: 2em;
+}
+
+.gmu {
+    margin-left: 40px;
+}
+
+/*Social Media Icons*/
+/*
+.fa {
+  padding: 20px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 4px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+*/
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.fa-pinterest {
+    background: #cb2027;
+    color: white;
+}
+
+/*Footer*/
+.address {
+    float: right;
+}
+
+.social {
+    float: left;
+}
+
+/*Schedule table*/
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.myClass
+{
+    display: none;
+}
