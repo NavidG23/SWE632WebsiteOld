@@ -10,39 +10,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../javascript/scripts/authenticate.js"></script>
+    <script src="../javascript/scripts/register.js"></script>
+    <script src="../javascript/scripts/classdatabase.js"></script>
 
     <!--    Style of social media Icons (had to take them out from separate css bc of malfunctioning-->
     <style>
-        .fa {
-            padding: 20px 40px 20px 20px;
-            font-size: 25px;
-            width: 50px;
-            text-align: left;
-            text-decoration: none;
-            margin: 5px 4px;
-        }
 
-        .fa:hover {
-            opacity: 0.7;
-        }
-
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: white;
-            text-align: center;
-        }
-
-        .bg1 {
-            height: 1500px;
-            padding-bottom: 70px;
-        }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <header>
         <a class="logo gmu" href="../index.html"><img src="../images/newLogo.jpg" height="90px"></a>
     </header>
@@ -60,10 +37,13 @@
                 <li><a href="accountdetails.html">Account Details</a></li>
                 <li><a href="schedule.html">View Schedule</a></li>
                 <li>
-                    <a href="http://gmu.bncollege.com/webapp/wcs/stores/servlet/TBWizardView?catalogId=10001&langId=-1&storeId=15552">Purchase
-                        Textbooks</a></li>
+                    <a href="http://gmu.bncollege.com/webapp/wcs/stores/servlet/TBWizardView?catalogId=10001&langId=-1&storeId=15552"
+                       target="_blank">
+                        Purchase Textbooks
+                    </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a><span id="userName"></span></a></li>
                 <li><a href="../login.html" id="logOut"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                 </li>
             </ul>
@@ -72,37 +52,51 @@
 </nav>
 
 <div class="container-fluid bg1 text-center">
-    <div class="row content">
-        <div class="row main">
-            <h1>Register For Class!</h1>
-            <div class="row">
-                <div class="col-md-1">
+    <div class="greetingHeader">Register For Class!</div>
+    <div class="row rowContent">
+        <div class="termselector">
+            <p>Select a term:</p>
+            <select id="term" class="form-control">
+                <option value="1">Fall 2018</option>
+                <option value="2">Summer 2018</option>
+                <option>Spring 2018 (View only)</option>
+                <option>Fall 2017 (View only)</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Subject/Course Panel  -->
+        <div  class="col-md-6">
+            <div class = "panel">
+                <!-- Search Bar -->
+                <input type="text" id="myInput"  placeholder="Search for Subject..." title="Type in a field">  
+                <!-- Subjects -->    
+                <div id="subjectSection"> 
+                    <h2>Subjects</h2>
+                    <ul id="searchList" class="subjects"></ul>
                 </div>
-                <div class="col-md-2">
-                    <div class="panel">
-                        <p>Select a term:</p>
-                        <select class="form-control" style="width:80%">
-                            <option>Fall 2018</option>
-                            <option>Summer 2018</option>
-                            <option>Spring 2018</option>
-                        </select>
-                    </div>
+                <br>
+                <!-- Courses -->
+                <div id="coursesSection" style="display: none"> 
+                    <a href="#" id="backToSubjects">back</a>
+                    <h2>Courses</h2>
+                    <ul id="searchList" class="courses"></ul> 
                 </div>
-                <div class="col-md-3">
-                    <div class="panel">
-                        Table of available courses in semester here
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="panel">
-                        Table of all information on different sections being offered for semester
-                    </div>
+            </div>
+        </div>
+        <!-- Sections Panel-->
+        <div class="col-md-6">
+            <div class = "panel">
+                <div id="coursesSelectionSection" style="display: none;"> 
+                    <h2>Sections</h2>
+                    <!-- For Table -->
+                    <table id="searchList" class="sections"></table>
+                    <!-- For List <ul id="searchList" class="sections"></ul> -->
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <footer class="container-fluid footer">
     <div id="footer">

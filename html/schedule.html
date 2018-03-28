@@ -10,237 +10,205 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../javascript/scripts/authenticate.js"></script>
+    <script src="../javascript/scripts/schedule.js"></script>
 
     <!--    Style of social media Icons (had to take them out from separate css bc of malfunctioning-->
     <style>
-        .fa {
-            padding: 20px 40px 20px 20px;
-            font-size: 25px;
-            width: 50px;
-            text-align: left;
-            text-decoration: none;
-            margin: 5px 4px;
-        }
 
-        .fa:hover {
-            opacity: 0.7;
-        }
-
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: white;
-            text-align: center;
-        }
-
-        .bg1 {
-            height: 1500px;
-            padding-bottom: 70px;
-        }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-    <header>
-        <a class="logo gmu" href="../index.html"><img src="../images/newLogo.jpg" height="90px"></a>
-    </header>
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <header>
+            <a class="logo gmu" href="../index.html"><img src="../images/newLogo.jpg" height="90px"></a>
+        </header>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="register.html">Register For Classes</a></li>
+                    <li><a href="accountdetails.html">Account Details</a></li>
+                    <li><a href="schedule.html">View Schedule</a></li>
+                    <li>
+                        <a href="http://gmu.bncollege.com/webapp/wcs/stores/servlet/TBWizardView?catalogId=10001&langId=-1&storeId=15552"
+                        target="_blank">
+                            Purchase Textbooks
+                        </a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a><span id="userName"></span></a></li>
+                    <li><a href="../login.html" id="logOut"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="register.html">Register For Classes</a></li>
-                <li><a href="accountdetails.html">Account Details</a></li>
-                <li><a href="schedule.html">View Schedule</a></li>
-                <li>
-                    <a href="http://gmu.bncollege.com/webapp/wcs/stores/servlet/TBWizardView?catalogId=10001&langId=-1&storeId=15552">Purchase
-                        Textbooks</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="../login.html" id="logOut"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div class="container-fluid bg1 text-center">
-    <div class="row content">
-        <div class="row main">
-            <h1>Student Schedule</h1>
-            <div class="row">
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-3">
-                    <div class="panel">
-                        <select id= "select01" class="form-control" style="width:80%">
-                            <option value= "Select">Select a Term...</option>
-                            <option value= "Summer">Summer 2018</option>
-                            <option value= "Spring">Spring 2018</option>
-                            <option value= "Fall">Fall 2017</option>
-                        </select>
+    </nav>
+    <div class="container-fluid bg1 text-center">
+        <div class="greetingHeader">Student Schedule</div>
+        <div class="row rowContent">
+            <div class="termselector">
+                <p>Select a term:</p>
+                <select id= "select01" class="form-control">
+                    <option value= "Fall18">Fall 2018</option>
+                    <option value= "Summer18">Summer 2018</option>
+                    <option value= "Spring18" selected="selected">Spring 2018</option>
+                    <option value= "Fall17">Fall 2017</option>
+                </select>
+            </div>
+            <div class="row main">
+                <div class="panel">
+                    <div class= "myClass" id="Fall18">
+                        <p>No classes signed up for yet!</p>
                     </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="panel">
-                        <div class= "myClass" id="Summer">
-                            <h2>Summer 2018</h2>
-                            <p>No classes signed up for yet!</p>
-                        </div>
-                        <div class= "myClass" id="Spring">
-                            <h2>Spring 2018</h2>
-                            <table>
-                              <tr>
-                                <th>CRN</th>
-                                <th>Course</th>
-                                <th>Title</th>
-                                <th>Campus</th>
-                                <th>Credits</th>
-                                <th>Level</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Days</th>
-                                <th>Time</th>
-                                <th>Location</th>
-                                <th>Instructor</th>
-                              </tr>
-                              <tr>
-                                <td>21298</td>
-                                <td>SWE 621 002</td>
-                                <td>Software Model/Architechual Design</td>
-                                <td>Fairfax</td>
-                                <td>3.00</td>
-                                <td>GR</td>
-                                <td>Jan 22</td>
-                                <td>May 16</td>
-                                <td>Wed</td>
-                                <td>4:30 pm - 7:10 pm</td>
-                                <td>Planetary Hall 224</td>
-                                <td>Pettit</td>
-                              </tr>
-                              <tr>
-                                <td>12873</td>
-                                <td>SWE 632 001</td>
-                                <td>User Interface Design and Development</td>
-                                <td>Fairfax</td>
-                                <td>3.00</td>
-                                <td>GR</td>
-                                <td>Jan 22</td>
-                                <td>May 16</td>
-                                <td>Tues</td>
-                                <td>4:30 pm - 7:10 pm</td>
-                                <td>Innovation Hall 136</td>
-                                <td>LaToza</td>
-                              </tr>
-                              <tr>
-                                <td>19976</td>
-                                <td>SWE 642 001</td>
-                                <td>Software Engineering for World Wide Web</td>
-                                <td>Fairfax</td>
-                                <td>3.00</td>
-                                <td>GR</td>
-                                <td>Jan 22</td>
-                                <td>May 16</td>
-                                <td>Tues</td>
-                                <td>7:20 pm - 10:00 pm</td>
-                                <td>Innovation Hall 208</td>
-                                <td>Dubey</td>
-                              </tr>
-                            </table>
-                        </div>
-                        <div class= "myClass" id="Fall">
-                            <h2>Fall 2017</h2>
-                            <table>
-                              <tr>
-                                <th>CRN</th>
-                                <th>Course</th>
-                                <th>Title</th>
-                                <th>Campus</th>
-                                <th>Credits</th>
-                                <th>Level</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
-                                <th>Days</th>
-                                <th>Time</th>
-                                <th>Location</th>
-                                <th>Instructor</th>
-                              </tr>
-                              <tr>
-                                <td>73413</td>
-                                <td>SWE 619 002</td>
-                                <td>Object Oriented Software Specifications and Construction</td>
-                                <td>Fairfax</td>
-                                <td>3.00</td>
-                                <td>GR</td>
-                                <td>Aug 28</td>
-                                <td>Dec 20</td>
-                                <td>Tues</td>
-                                <td>4:30 pm - 7:10 pm</td>
-                                <td>Art and Design Building 2026</td>
-                                <td>Ammann</td>
-                              </tr>
-                              <tr>
-                                <td>74510</td>
-                                <td>SWE 622 001</td>
-                                <td>Distributed Software Engineering</td>
-                                <td>Fairfax</td>
-                                <td>3.00</td>
-                                <td>GR</td>
-                                <td>Aug 28</td>
-                                <td>Dec 20</td>
-                                <td>Wed</td>
-                                <td>7:20 pm - 10:00 pm</td>
-                                <td>Art and Design Building 2026</td>
-                                <td>Wheeler</td>
-                              </tr>
-                              <tr>
-                                <td>70383</td>
-                                <td>SWE 637 001</td>
-                                <td>Software Testing</td>
-                                <td>Fairfax</td>
-                                <td>3.00</td>
-                                <td>GR</td>
-                                <td>Aug 28</td>
-                                <td>Dec 20</td>
-                                <td>Mon</td>
-                                <td>4:30 pm - 7:10 pm</td>
-                                <td>James Buchanan Hall D023</td>
-                                <td>Offutt</td>
-                              </tr>
-                            </table>
-                        </div>
+                    <div class= "myClass" id="Summer18">
+                        <p>No classes signed up for yet!</p>
+                    </div>
+                    <div class= "myClass" id="Spring18">
+                        <table>
+                            <tr>
+                            <th>CRN</th>
+                            <th>Course</th>
+                            <th>Title</th>
+                            <th>Campus</th>
+                            <th>Credits</th>
+                            <th>Level</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Days</th>
+                            <th>Time</th>
+                            <th>Location</th>
+                            <th>Instructor</th>
+                            </tr>
+                            <tr>
+                            <td>21298</td>
+                            <td>SWE 621 002</td>
+                            <td>Software Model/Architechual Design</td>
+                            <td>Fairfax</td>
+                            <td>3.00</td>
+                            <td>GR</td>
+                            <td>Jan 22</td>
+                            <td>May 16</td>
+                            <td>Wed</td>
+                            <td>4:30 pm - 7:10 pm</td>
+                            <td>Planetary Hall 224</td>
+                            <td>Pettit</td>
+                            </tr>
+                            <tr>
+                            <td>12873</td>
+                            <td>SWE 632 001</td>
+                            <td>User Interface Design and Development</td>
+                            <td>Fairfax</td>
+                            <td>3.00</td>
+                            <td>GR</td>
+                            <td>Jan 22</td>
+                            <td>May 16</td>
+                            <td>Tues</td>
+                            <td>4:30 pm - 7:10 pm</td>
+                            <td>Innovation Hall 136</td>
+                            <td>LaToza</td>
+                            </tr>
+                            <tr>
+                            <td>19976</td>
+                            <td>SWE 642 001</td>
+                            <td>Software Engineering for World Wide Web</td>
+                            <td>Fairfax</td>
+                            <td>3.00</td>
+                            <td>GR</td>
+                            <td>Jan 22</td>
+                            <td>May 16</td>
+                            <td>Tues</td>
+                            <td>7:20 pm - 10:00 pm</td>
+                            <td>Innovation Hall 208</td>
+                            <td>Dubey</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class= "myClass" id="Fall17">
+                        <table>
+                            <tr>
+                            <th>CRN</th>
+                            <th>Course</th>
+                            <th>Title</th>
+                            <th>Campus</th>
+                            <th>Credits</th>
+                            <th>Level</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Days</th>
+                            <th>Time</th>
+                            <th>Location</th>
+                            <th>Instructor</th>
+                            </tr>
+                            <tr>
+                            <td>73413</td>
+                            <td>SWE 619 002</td>
+                            <td>Object Oriented Software Specifications and Construction</td>
+                            <td>Fairfax</td>
+                            <td>3.00</td>
+                            <td>GR</td>
+                            <td>Aug 28</td>
+                            <td>Dec 20</td>
+                            <td>Tues</td>
+                            <td>4:30 pm - 7:10 pm</td>
+                            <td>Art and Design Building 2026</td>
+                            <td>Ammann</td>
+                            </tr>
+                            <tr>
+                            <td>74510</td>
+                            <td>SWE 622 001</td>
+                            <td>Distributed Software Engineering</td>
+                            <td>Fairfax</td>
+                            <td>3.00</td>
+                            <td>GR</td>
+                            <td>Aug 28</td>
+                            <td>Dec 20</td>
+                            <td>Wed</td>
+                            <td>7:20 pm - 10:00 pm</td>
+                            <td>Art and Design Building 2026</td>
+                            <td>Wheeler</td>
+                            </tr>
+                            <tr>
+                            <td>70383</td>
+                            <td>SWE 637 001</td>
+                            <td>Software Testing</td>
+                            <td>Fairfax</td>
+                            <td>3.00</td>
+                            <td>GR</td>
+                            <td>Aug 28</td>
+                            <td>Dec 20</td>
+                            <td>Mon</td>
+                            <td>4:30 pm - 7:10 pm</td>
+                            <td>James Buchanan Hall D023</td>
+                            <td>Offutt</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
-<footer class="container-fluid footer">
-    <div id="footer">
-        <p class="address">
-            2018 George Mason University
-            <br>
-            4400 University Drive Fairfax, Virginia 22030
-            <br>
-            Phone:703-993-1000
-        </p>
-        <a href="https://www.facebook.com/georgemason" class="fa fa-facebook social"></a>
-        <a href="https://twitter.com/georgemasonu" class="fa fa-twitter social"></a>
-        <a href="https://www.linkedin.com/school/george-mason-university/" class="fa fa-linkedin social"></a>
-        <a href="https://www.youtube.com/user/masonWeb" class="fa fa-youtube social"></a>
-        <a href="https://www.instagram.com/georgemasonu/" class="fa fa-instagram social"></a>
-        <a href="https://www.pinterest.com/georgemasonuniv/?autologin=true" class="fa fa-pinterest social"></a>
-    </div>
-</footer>
-
+    <footer class="container-fluid footer">
+        <div id="footer">
+            <p class="address">
+                2018 George Mason University
+                <br>
+                4400 University Drive Fairfax, Virginia 22030
+                <br>
+                Phone:703-993-1000
+            </p>
+            <a href="https://www.facebook.com/georgemason" class="fa fa-facebook social"></a>
+            <a href="https://twitter.com/georgemasonu" class="fa fa-twitter social"></a>
+            <a href="https://www.linkedin.com/school/george-mason-university/" class="fa fa-linkedin social"></a>
+            <a href="https://www.youtube.com/user/masonWeb" class="fa fa-youtube social"></a>
+            <a href="https://www.instagram.com/georgemasonu/" class="fa fa-instagram social"></a>
+            <a href="https://www.pinterest.com/georgemasonuniv/?autologin=true" class="fa fa-pinterest social"></a>
+        </div>
+    </footer>
 </body>
 </html>

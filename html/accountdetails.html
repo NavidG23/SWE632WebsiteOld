@@ -13,37 +13,11 @@
 
     <!--    Style of social media Icons (had to take them out from separate css bc of malfunctioning-->
     <style>
-        .fa {
-            padding: 20px;
-            padding-right: 40px;
-            font-size: 25px;
-            width: 50px;
-            text-align: left;
-            text-decoration: none;
-            margin: 5px 4px;
-        }
 
-        .fa:hover {
-            opacity: 0.7;
-        }
-
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: white;
-            text-align: center;
-        }
-
-        .bg1 {
-            height: 1500px;
-            padding-bottom: 70px;
-        }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <header>
         <a class="logo gmu" href="../index.html"><img src="../images/newLogo.jpg" height="90px"></a>
     </header>
@@ -61,10 +35,13 @@
                 <li><a href="accountdetails.html">Account Details</a></li>
                 <li><a href="schedule.html">View Schedule</a></li>
                 <li>
-                    <a href="http://gmu.bncollege.com/webapp/wcs/stores/servlet/TBWizardView?catalogId=10001&langId=-1&storeId=15552">Purchase
-                        Textbooks</a></li>
+                    <a href="http://gmu.bncollege.com/webapp/wcs/stores/servlet/TBWizardView?catalogId=10001&langId=-1&storeId=15552"
+                       target="_blank">
+                        Purchase Textbooks
+                    </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a><span id="userName"></span></a></li>
                 <li><a href="../login.html" id="logOut"><span class="glyphicon glyphicon-log-out logOut"></span> Logout</a>
                 </li>
             </ul>
@@ -74,28 +51,24 @@
 
 <div class="container-fluid bg1 text-center">
     <div class="row content">
-        <div class="row main">
-            <h1>Account Details</h1>
-            <div class="row">
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-3">
-                    <div class="panel">
+            <div class="greetingHeader">Account Details</div>
+            <div class="row rowContent">
+                    <div class="termselector">
                         <p>Select a term:</p>
-                        <select class="form-control" style="width:80%">
-                            <option>Fall 2018</option>
-                            <option>Summer 2018</option>
-                            <option>Spring 2018</option>
+                        <select id= "select01" class="form-control">
+                            <option value= "Fall18">Fall 2018</option>
+                            <option value= "Summer18">Summer 2018</option>
+                            <option value= "Spring18" selected="selected">Spring 2018</option>
+                            <option value= "Fall17">Fall 2017</option>
                         </select>
                     </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="panel">
-                        Student's account details
+
+                <div class="row main">
+                    <div  class="schedule">
+                        <p>Student's Account Details</p>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 
