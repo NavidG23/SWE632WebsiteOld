@@ -400,3 +400,7 @@ tr:nth-child(even) {
     background:white;
 }
 
+.highlight{
+    background-color:#ffff99 !important;
+}
+

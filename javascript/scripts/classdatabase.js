@@ -1,7 +1,7 @@
 $(document).ready(function(){
     //Append the subjects to the subject list.
     for(i in subject){
-        $(".subjects").append("<li class='subjectListing searchItems' value='"+ subject[i].id + "' </li><a href='#'>"+ subject[i].name +" ["+ subject[i].abbreviation + "]</a>");
+        $(".subjects").append("<li class='subjectListing searchItems' value='" + subject[i].id + "' abbrev='" + subject[i].abbreviation + "' </li><a href='#'>"+ subject[i].name +" ["+ subject[i].abbreviation + "]</a>");
     } 
     
     /**
@@ -16,9 +16,10 @@ $(document).ready(function(){
     /**
      * Append courses when subject is clicked.
      */
-    $('.subjectListing').click(function(e){
+    $('.subjectListing').on('click',function(e){
         e.preventDefault(); //Page won't jump to top
         var courses = getCoursesForSubject($(this).val());
+        var subjectAbbrevation = $(this).attr('abbrev');
         $('#subjectSection').hide();
         $("#coursesSection").show();        
         $(".courses").empty();
@@ -28,22 +29,24 @@ $(document).ready(function(){
             $(".courses").append("<li class='courseListing'><a>There are currently no courses available.</a></li>");
         }else{
             for(i in courses){
-                $(".courses").append("<li class='courseListing searchItems' value='"+ courses[i].id + "' </li><a href='#'>"+ courses[i].name +"</a>");
+                $(".courses").append("<li class='courseListing searchItems' value='"+ courses[i].id + "' </li><a href='#' class='courseListingLink'>"+ subjectAbbrevation + " " + courses[i].name +"</a>");
             }
         }
-        activateCourseListeners(); //Activate handlers for newly created course items.         
+        activateCourseListeners(); //Activate handlers for newly created course items.    
+        $('#myInput').attr("placeholder", "Search for Course...");     
     });
 
     /**
      * Empties course and section data, returns back to original subject list.
      */
-    $('#backToSubjects').click(function(e){
+    $('#backToSubjects').on('click',function(e){
         e.preventDefault();
         $('.sections').empty();
         $(".courses").empty();
         $("#coursesSection").hide();
         $('#subjectSection').show();
         $('#myInput').val('').trigger('input');        
+        $('#myInput').attr("placeholder", "Search for Subject...");     
     })
 
     /**
@@ -59,8 +62,14 @@ $(document).ready(function(){
  * when a user selects a subject
  */
 function activateCourseListeners(){
-    $('.courseListing').click(function(e){
+    $('.courseListing').on('click', function(e){
         e.preventDefault(); //Page won't jump to top
+        //Remove highlights from all other courses
+        $('.courseListingLink').each(function(){
+            $(this).removeClass('highlight');
+        })
+        //Highlight the course selected
+        $(e.target).addClass('highlight');
         //Get the sections available by the course and term ids. Method located in register.js
         var sections = getSectionsByCourseAndTerm(parseInt($('#term').val()), $(this).val())
         $('#subjectSection').hide();
