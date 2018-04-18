@@ -10,15 +10,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="javascript/scripts/authenticate.js"></script>
-    <!--Style of social media icons (had to take them out from separate css bc of malfunctioning)-->
-    <style>
-
-    </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <header>
-        <a class="logo gmu" href="index.html"><img src="images/newLogo.jpg" height="90px"></a>
+        <a class="logo gmu" href="index.html"><img src="images/newLogo.jpg" alt="George Mason University Logo"  height="90px"></a>
     </header>
     <div class="container-fluid">
         <div class="navbar-header">
@@ -29,7 +25,8 @@
             </button>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
                 <li><a href="html/register.html">Register For Classes</a></li>
                 <li><a href="html/accountdetails.html">Account Details</a></li>
                 <li><a href="html/schedule.html">View Schedule</a></li>
@@ -37,7 +34,8 @@
                     <a href="http://gmu.bncollege.com/webapp/wcs/stores/servlet/TBWizardView?catalogId=10001&langId=-1&storeId=15552"
                        target="_blank">
                         Purchase Textbooks
-                    </a></li>
+                    </a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a><span id="userName"></span></a></li>
@@ -51,23 +49,63 @@
         <div class="row main">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="greetingHeader">Welcome To PatriotWeb!</div>
-                    <div class="greetingMessage">a self-service website for students, faculty, and staff</div>
+                    <h1 class="greetingHeader">Welcome To PatriotWeb!</h1>
+                    <h2 class="greetingMessage">a self-service website for students, faculty, and staff</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col col-md-12">
                     <div class="image-container">
                         <div class="col col-md-4">
-                            <a href="html/personalinformation.html"><img src="images/personalinformation.jpg"></a>
+                            <a href="html/personalinformation.html">
+                                <div class="main_nav_container">
+                                    <img src="images/personalinformation.jpg"alt = "pen with background of fillable form">
+                                    <div class="overlay_text_container">
+                                        <div class="overlay_text">
+                                            <p>
+                                                &#8226; View or Update your personal information<br>
+                                                &#8226; View name or SSN change documentation
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="picture-label">Personal Information</div>
                         </div>
                         <div class="col col-md-4">
-                            <a href="html/studentservices.html"><img src="images/studentservices.jpg" alt="SS"></a>
+                            <a href="html/studentservices.html">
+                                <div class="main_nav_container">
+                                    <img src="images/studentservices.jpg" alt="George Mason office with two advisors, one standing, one sitting.">
+                                    <div class="overlay_text_container">
+                                        <div class="overlay_text">
+                                            <p>
+                                                &#8226; Register for classes<br>
+                                                &#8226; View your transcript<br>
+                                                &#8226; Order an official transcripts<br>
+                                                &#8226; Review account details
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="picture-label">Student Services</div>
                         </div>
                         <div class="col col-md-4">
-                            <a href="html/financialaid.html"><img src="images/financialaid.jpg" alt="FA"></a>
+                            <a href="html/financialaid.html">
+                                <div class="main_nav_container">
+                                    <img src="images/financialaid.jpg" alt="A school advisor helping a student in her office">
+                                    <div class="overlay_text_container">
+                                        <div class="overlay_text">
+                                            <p>
+                                                &#8226; Apply for Financial Aid<br>
+                                                &#8226; Review application status(es)<br>
+                                                &#8226; Check required document(s) status(es)<br>
+                                                &#8226; Review your loan(s)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                             <div class="picture-label">Financial Aid</div>
                         </div>
                     </div>
@@ -105,7 +143,7 @@
     </div>
 </div>
 -->
-    <footer class="container-fluid footer">
+<footer class="container-fluid footer">
     <div id="footer">
         <p class="address">
             2018 George Mason University

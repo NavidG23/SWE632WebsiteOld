@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Patriot Web Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -55,6 +56,22 @@
         .header-label {
             color: #c8a600;
             font-size: 54px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .left .main .right {
+                width: 100%;
+            }
+
+            body {
+                background: #003300;
+            }
+
+            .login-form {
+                width: 100%;
+                background-color: #003300;
+                color: white;
+            }
         }
 
     </style>

@@ -12,16 +12,11 @@
     <script src="../javascript/scripts/authenticate.js"></script>
     <script src="../javascript/scripts/register.js"></script>
     <script src="../javascript/scripts/classdatabase.js"></script>
-
-    <!--    Style of social media Icons (had to take them out from separate css bc of malfunctioning-->
-    <style>
-
-    </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <header>
-        <a class="logo gmu" href="../index.html"><img src="../images/newLogo.jpg" height="90px"></a>
+        <a class="logo gmu" href="../index.html"><img src="../images/newLogo.jpg" alt="George Mason University Logo" height="90px"></a>
     </header>
     <div class="container-fluid">
         <div class="navbar-header">
@@ -32,8 +27,9 @@
             </button>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="register.html">Register For Classes</a></li>
+            <ul class="nav navbar-nav mr-auto">
+                <li><a href="../index.html">Home</a></li>
+                <li class="nav-item active"><a class="nav-link" href="register.html">Register For Classes</a></li>
                 <li><a href="accountdetails.html">Account Details</a></li>
                 <li><a href="schedule.html">View Schedule</a></li>
                 <li>
@@ -52,7 +48,7 @@
 </nav>
 
 <div class="container-fluid bg1 text-center">
-    <div class="greetingHeader">Register For Class!</div>
+    <h1 class="greetingHeader">Register For Class!</h1>
     <div class="row rowContent">
         <div class="termselector">
             <p>Select a term:</p>

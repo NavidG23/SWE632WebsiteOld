@@ -1,10 +1,9 @@
-
 html {
     height: 100%;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #B2BABB;
     position: relative;
     margin: 0;
@@ -16,6 +15,13 @@ body{
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fbc02d;
+    background-color: transparent;
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -103,26 +109,6 @@ footer {
     background-color: black;
 }
 
-/*overlay specs*/
-.overlay {
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: mediumseagreen;
-}
-
-/*Overlay opacity*/
-.container:hover .overlay {
-    opacity: .7;
-}
-
 /*Patriot web title*/
 .greetingHeader {
     font-size: 75px;
@@ -138,7 +124,7 @@ footer {
     color: #c49000;
 }
 
-.main {   
+.main {
     height: 100%;
 }
 
@@ -146,37 +132,32 @@ footer {
     position: center;
     padding-bottom: 70px;
     /*Needed for navbar-fixed-top*/
-    padding-top:175px;
+    padding-top: 175px;
     width: 95%;
     margin: 0 auto;
 }
 
 /*Hack to compensate for absolute footer*/
 @media screen and (max-width: 767px) {
-   .bg1{
+    .bg1 {
         margin-bottom: 100px;
-   } 
+    }
 }
 
 /*Overlay container*/
 .image-container {
     position: relative;
     margin-bottom: 30px;
-    margin-top: 10%;
+    margin-top: 5%;
     text-align: center;
     font-size: 18px;
     font-weight: 200;
 }
 
-/*Overlay opacity*/
-.image-container .overlay:hover {
-    opacity: .7;
-}
-
 /*image container*/
 .image-container img {
-    border-radius: 50%;
-    width: 200px;
+    border-radius: 10%;
+    width: 90%;
     border: 0px solid rgb(248, 248, 127);
 }
 
@@ -196,9 +177,57 @@ footer {
 }
 
 /*button color*/
-.image-container img:hover {
+.main_nav_container:hover img {
     border: 3px solid rgb(248, 248, 127);
-    transition: border .05s ease;
+    -webkit-transition: background-color .5s ease;
+    -moz-transition: background-color .5s ease;
+    -ms-transition: background-color .5s ease;
+    -o-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+    -webkit-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0.4;
+    backface-visibility: hidden;
+}
+
+.main_nav_container {
+    border-radius: 10%;
+    width: 100%;
+    border: 0px solid rgb(248, 248, 127);
+}
+
+.overlay_text_container {
+    transition: .5s ease;
+    text-align: center;
+    width: 90%;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 8px;
+}
+
+.main_nav_container:hover .overlay_text_container {
+    opacity: 1;
+}
+
+.overlay_text {
+    border-radius: 10%;
+    color: #003300;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.picture-label {
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    font-family: "Brush Script MT Bold", cursive;
+    padding-top: 10px;
 }
 
 .footer {
@@ -213,11 +242,10 @@ footer {
     text-align: center;
 }
 
-
 .panel {
     border: 1px solid black;
     padding: 2em;
-    max-height:500px;
+    max-height: 500px;
     margin-top: 10%;
     overflow-y: scroll;
 
@@ -227,11 +255,10 @@ footer {
     border: 1px solid black;
     background: white;
     padding: 2em;
-    height:500px;
+    height: 500px;
     margin-top: -5%;
 
 }
-
 
 .gmu {
     margin-left: 40px;
@@ -244,7 +271,7 @@ footer {
     text-align: -moz-right;
     text-align: -webkit-right;
     font-size: small;
-/*    color:#9d9d9d;*/
+    /*    color:#9d9d9d;*/
 }
 
 .social {
@@ -269,20 +296,17 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-.myClass
-{
+.myClass {
     display: none;
 }
 
-#userName{
-    color:#9d9d9d;
+#userName {
+    color: #9d9d9d;
 }
 
-.rowContent{
-    margin-top:30px;
+.rowContent {
+    margin-top: 30px;
 }
-
-
 
 .fa {
     padding: 20px 40px 20px 20px;
@@ -295,7 +319,6 @@ tr:nth-child(even) {
 .fa:hover {
     opacity: 0.7;
 }
-
 
 .fa-facebook {
     background: #3B5998;
@@ -328,7 +351,7 @@ tr:nth-child(even) {
 }
 
 @media screen and (max-width: 767px) {
-    .fa{
+    .fa {
         padding: 10px 10px 10px 10px;
         font-size: 15px !important;
     }
@@ -336,71 +359,102 @@ tr:nth-child(even) {
 
 /*Search bar*/
 * {
- box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 #myInput {
- background-image: url('/css/searchicon.png');
- background-position: 10px 12px;
- background-repeat: no-repeat;
- width: 100%;
- font-size: 16px;
- padding: 12px 20px 12px 40px;
- border: 1px solid #ddd;
- margin-bottom: 12px;
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
 }
 
 #searchList {
- list-style-type: none;
- padding: 0;
- margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 #searchList li a {
- border: 1px solid #ddd;
- margin-top: -1px; /* Prevent double borders */
- background-color: #f6f6f6;
- padding: 12px;
- text-decoration: none;
- font-size: 18px;
- color: black;
- display: block
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+}
+
+#searchListAlreadyTakenClasses li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: red;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
 }
 
 #searchList li a:hover:not(.header) {
- background-color: #eee;
+    background-color: #eee;
 }
 
+#sectionList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
 .termpanel {
-   display: block;
-   background: white;
-   height:150px;
-   border: 1px solid black;
-   padding: 2em;
+    display: block;
+    background: white;
+    height: 150px;
+    border: 1px solid black;
+    padding: 2em;
 }
 
 /*View Schedule*/
-.schedule{
+.schedule {
     background: white;
     margin-left: 5%;
-    margin-right:5%;
-    margin-top:3%;
+    margin-right: 5%;
+    margin-top: 3%;
     margin-bottom: 3%;
 }
 
-.termselector{
-    width:250px;
+.termselector {
+    width: 250px;
     /* Will auto center */
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.panelschedule{
-    background:white;
+.panelschedule {
+    background: white;
 }
 
-.highlight{
-    background-color:#ffff99 !important;
+.highlight {
+    background-color: #ffff99 !important;
+}
+
+.register_button {
+    background-color: #1b5e20;
+    color: white;
+    border-radius: 10%;
+    padding: 8px;
+    font-family: "Arial Narrow", serif;
+    font-size: 16px;
+}
+
+.disabled {
+    color: #1b5e20 !important;
+    font-style: oblique !important;
+    font-weight: bold !important;
 }
 

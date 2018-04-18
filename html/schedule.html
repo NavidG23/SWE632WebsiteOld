@@ -11,16 +11,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../javascript/scripts/authenticate.js"></script>
     <script src="../javascript/scripts/schedule.js"></script>
-
-    <!--    Style of social media Icons (had to take them out from separate css bc of malfunctioning-->
-    <style>
-
-    </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <header>
-            <a class="logo gmu" href="../index.html"><img src="../images/newLogo.jpg" height="90px"></a>
+            <a class="logo gmu" href="../index.html"><img src="../images/newLogo.jpg" alt="George Mason University Logo" height="90px"></a>
         </header>
         <div class="container-fluid">
             <div class="navbar-header">
@@ -31,10 +26,11 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav mr-auto">
+                    <li><a href="../index.html">Home</a></li>
                     <li><a href="register.html">Register For Classes</a></li>
                     <li><a href="accountdetails.html">Account Details</a></li>
-                    <li><a href="schedule.html">View Schedule</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="schedule.html">View Schedule</a></li>
                     <li>
                         <a href="http://gmu.bncollege.com/webapp/wcs/stores/servlet/TBWizardView?catalogId=10001&langId=-1&storeId=15552"
                         target="_blank">
@@ -50,7 +46,7 @@
         </div>
     </nav>
     <div class="container-fluid bg1 text-center">
-        <div class="greetingHeader">Student Schedule</div>
+        <h1 class="greetingHeader">Student Schedule</h1>
         <div class="row rowContent">
             <div class="termselector">
                 <p>Select a term:</p>
